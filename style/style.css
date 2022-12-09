@@ -10,7 +10,11 @@
     font-family: "Ruberoid";
     src: url(../fonts/Ruberoid-Regular.ttf);
 }
-
+@keyframes animated_text {
+	0% { background-position: 0px 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0px 50%; }
+}
 body{
     background-color: #040404;
 }
@@ -68,11 +72,16 @@ nav{
     font-weight: 400;
     font-size: 110px;
     line-height: 95%;
-    background: linear-gradient(267.88deg, #52FFCB 14.45%, #D274FF 50.48%, #81ACFF 85.04%);
+    background: linear-gradient(267.88deg, #52FFCB , #D274FF , #81ACFF );
+    background-size: 500%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: animated_text 5s ease-in-out infinite;
+	-moz-animation: animated_text 5s ease-in-out infinite;
+	-webkit-animation: animated_text 5s ease-in-out infinite;
 }
+
 .content_description {
     display: flex;
     justify-content: space-between;
@@ -126,9 +135,14 @@ nav{
     font-weight: 400;
     font-size: 50px;
     line-height: 65px;
-    background: linear-gradient(267.88deg, #52FFCB 14.45%, #D274FF 50.48%, #81ACFF 85.04%);
+    background: repeating-linear-gradient(267.88deg, #52FFCB , #D274FF , #81ACFF ) ;
+    background-size: 500%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: animated_text 5s ease-in-out infinite;
+	-moz-animation: animated_text 5s ease-in-out infinite;
+	-webkit-animation: animated_text 5s ease-in-out infinite;
 }
 .two_block p{
     align-self: flex-end;
@@ -139,7 +153,6 @@ nav{
     font-size: 24px;
     line-height: 33px;
     color: #FFFFFF;
-
 }
 .block_content {
     display: flex;
