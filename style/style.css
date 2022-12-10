@@ -31,6 +31,9 @@ header{
     flex-direction: column;
     justify-content: space-around;
 }
+.logo img{
+    width: 105px;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -53,6 +56,19 @@ nav{
     line-height: 25px;
     color: #fff;
     text-decoration: none;
+    outline: none;
+}
+.navbar a:after { 
+    display: block;
+    content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+    height: 3px; /*задаём высоту линии*/
+    width: 0%; /*задаём начальную ширину элемента (линии)*/
+    background-color: #ffffff; /*цвет фона элемента*/
+    transition: width 0.4s ease-in-out;
+}
+.navbar a:hover:after,
+.navbar a:focus:after {
+width: 100%;
 }
 .header_litering {
     display: flex;
@@ -86,12 +102,14 @@ nav{
     display: flex;
     justify-content: space-between;
 }
-.nav_scroll {
+.nav_scroll a{
     display: flex;
     justify-content: space-evenly;
     max-width: 180px;
     width: 100%;
     align-items: center;
+    text-decoration: none;
+    outline: none;
 }
 .nav_scroll p{
     font-family: 'Ruberoid';
@@ -119,6 +137,8 @@ nav{
 
 .main_content {
 }
+.slider{
+}
 .slider img{
     margin-top: 100px;
     width: 100%;
@@ -127,15 +147,17 @@ nav{
     display: flex;
     justify-content: center;
 }
-.two_block h1{
-    align-self: flex-start;
+.anim{
+    display: flex;
+}
+.block_content h2{
     width: 752px;
     font-family: 'Coil';
     font-style: normal;
     font-weight: 400;
     font-size: 50px;
     line-height: 65px;
-    background: repeating-linear-gradient(267.88deg, #52FFCB , #D274FF , #81ACFF ) ;
+    background: linear-gradient(267.88deg, #52FFCB , #D274FF , #81ACFF ) ;
     background-size: 500%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -144,7 +166,7 @@ nav{
 	-moz-animation: animated_text 5s ease-in-out infinite;
 	-webkit-animation: animated_text 5s ease-in-out infinite;
 }
-.two_block p{
+.block_content p{
     align-self: flex-end;
     width: 388px;
     font-family: 'Manrope';
@@ -160,7 +182,7 @@ nav{
     max-width: 1200px;
     width: 100%;
     height: 600px;
-    margin: 277px 0 277px;
+    padding: 277px 0 277px;
 }
 .product {
     display: flex;
@@ -172,6 +194,7 @@ nav{
     max-height: 700px;
     height: 100%;
     margin-bottom: 200px;
+    padding-top: 200px;
 }
 .images {
     max-width: 950px;
@@ -181,6 +204,7 @@ nav{
 .images img{
     max-width: 950px;
     height: 700px;
+
 }
 .discription {
     display: flex;
@@ -261,6 +285,11 @@ nav{
     padding: 22px 44px;
     width: 185px;
 }
+button:hover{
+    background-color: #ffffff;
+    color: #000000;
+    transition-duration: 0.8s;
+}
 footer{
     display: flex;
     justify-content: center;
@@ -284,21 +313,34 @@ footer{
     text-align: center;
     color: #FFFFFF;
 }
-.logo {
+.footer_content .logo {
     max-width: 250px;
     width: 100%;
 }
-.logo img{
+.footer_content .logo img{
     max-width: 250px;
     width: 100%;
 }
-.contacts p{
+.contacts a{
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 33px;
     color: #FFFFFF;
+    text-decoration: none;
+}
+.contacts a:after { 
+    display: block;
+    content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+    height: 3px; /*задаём высоту линии*/
+    width: 0%; /*задаём начальную ширину элемента (линии)*/
+    background-color: #ffffff; /*цвет фона элемента*/
+    transition: width 0.4s ease-in-out;
+}
+.contacts a:hover:after,
+.contacts a:focus:after {
+width: 100%;
 }
 .contacts{
     display: flex;
