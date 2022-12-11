@@ -13,3 +13,15 @@ for(let anchor of anchors) {
     })
   })
 }
+
+
+function burger_menu(){
+  let menu = document.querySelector('#menu')
+  let b = menu.style.display
+  if (b == 'block'){
+    menu.style.display = 'none'
+  }
+  else{
+    menu.style.display = 'block'
+  }
+}

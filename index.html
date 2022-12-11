@@ -16,11 +16,11 @@
 <body>
     <header>
         <div class="header_content">    
-            <div class="navbar">
-                <div class="logo wow animate__animated animate__slideInDown">
+            <div class="navbar wow animate__animated animate__fadeIn">
+                <div class="logo ">
                     <img src="img/logo.svg" alt="">
                 </div>
-                <nav class='wow animate__animated animate__slideInDown'>
+                <nav class='nav_str '>
                     <ul>
                         <li><a href="#about_us">О продукте</a></li>
                         <li><a href="#product">Напитки</a></li>
@@ -28,19 +28,33 @@
                         <li><a href="">Купить <img src="/img/strelka.svg" alt=""></a></li>
                     </ul>
                 </nav>
+                <nav class="nav_gamb wow animate__animated animate__fadeIn"role="navigation">
+                    <div id="menuToggle">
+                      <input type="checkbox" onclick="burger_menu()"/>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <ul id="menu">
+                        <a href="#about_us"><li>О продукте</li></a>
+                        <a href="#product"><li>Напитки</li></a>
+                        <a href="#contact"><li>Контакты</li></a>
+                        <a href="#"><li>Купить</li></a>
+                      </ul>
+                    </div>
+                  </nav>
             </div>
             <div class="header_litering">
-                <div class="litering_content wow animate__animated animate__zoomIn">
+                <div class="litering_content wow animate__animated animate__fadeIn">
                     <h1>Открой свой Sever</h1>
                 </div>
                 <div class="content_description">
-                    <div class="nav_scroll wow animate__animated animate__fadeInLeftBig">
+                    <div class="nav_scroll wow animate__animated animate__fadeIn">
                         <a href="#about_us">
                             <img src="/img/strelka-vniz.svg" alt="">
                             <p>SCROLL DOWN</p>
                         </a>
                     </div>
-                    <div class="description_text wow animate__animated animate__fadeInRightBig">
+                    <div class="description_text wow animate__animated animate__fadeIn">
                         <p>Напиток с сильным характером. <br>
                             Свободный и удивляющий, он дарит <br>
                             эмоции и приглашает к открытиям.</p>
@@ -56,25 +70,30 @@
             </div>
             <div class="two_block">
                 <div class="block_content" id="about_us">
-                    <div class="anim wow animate__animated animate__fadeInLeftBig">
-                        <h2>Открой свой Sever и получай новые эмоции каждый день</h2>
+                    <div class="content">
+                        <div class="anim wow animate__animated animate__fadeInLeftBig">
+                            <h2>Открой свой Sever и получай новые эмоции каждый день</h2>
+                        </div>
+                        <p class="wow animate__animated animate__fadeInRightBig">Sever – это классические вкусы в современном трактовке. 
+                            <br><br>
+                            Мы взяли за основу основные рецепты и… сделали по-другому. Чтобы создать Север, нужно было смотреть на самые популярные магазины и
+                            сохранять всё самое лучшее 
+                            во вкусе. 
+                            <br><br>
+                            Если поиск нового – это твоё, то  Север – это правильный выбор. </p>
                     </div>
-                    <p class="wow animate__animated animate__fadeInRightBig">Sever – это классические вкусы в современном трактовке. 
-                        <br><br>
-                        Мы взяли за основу основные рецепты и… сделали по-другому. Чтобы создать Север, нужно было смотреть на самые популярные магазины и
-                        сохранять всё самое лучшее 
-                        во вкусе. 
-                        <br><br>
-                        Если поиск нового – это твоё, то  Север – это правильный выбор. </p>
+                    <div class="about_images">
+                        <img src="/img/Bottle.png" alt="bottle" srcset="">
+                    </div>
                 </div>
             </div>
             <div class="product">
 
-                <div class="product_content wow animate__animated animate__fadeInLeftBig" id="product">
-                    <div class="images">
+                <div class="product_content" id="product">
+                    <div class="images wow animate__animated animate__fadeInLeftBig">
                         <img src="/img/lemon.png" alt="">
                     </div>
-                    <div class="discription">
+                    <div class="discription wow animate__animated animate__fadeInRightBig">
                         <h2>Bitter Lemon</h2>
                         <p>Самое время открыть <br>
                             SEVER bitter lemon – сочетание легкой горечи с бодрящим лимоном. 
@@ -85,11 +104,11 @@
                     </div>
                 </div>
 
-                <div class="product_content wow animate__animated animate__fadeInRightBig">
-                    <div class="images">
+                <div class="product_content">
+                    <div class="images wow animate__animated animate__fadeInRightBig">
                         <img src="/img/tonic.png" alt="">
                     </div>
-                    <div class="discription">
+                    <div class="discription wow animate__animated animate__fadeInLeftBig">
                         <h2>Indian tonic</h2>
                         <p>Открой свой SEVER indian tonic. <br>
                             Этот классический вкус может перевернуть твоё представление о тонике. <br><br>
@@ -99,11 +118,11 @@
                     </div>
                 </div>
 
-                <div class="product_content wow animate__animated animate__fadeInLeftBig">
-                    <div class="images">
+                <div class="product_content ">
+                    <div class="images wow animate__animated animate__fadeInLeftBig">
                         <img src="/img/soda.png" alt="">
                     </div>
-                    <div class="discription">
+                    <div class="discription wow animate__animated animate__fadeInRightBig">
                         <h2>Soda</h2>
                         <p>Смелее! Перед тобой – SEVER soda. Благородная классика в новом прочтении.
                             Легкость вкуса и сила характера - для этой комбинации не нужен повод. <br>

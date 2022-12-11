@@ -1,3 +1,18 @@
+.navbar.animate__animated.animate__fadeIn {
+    --animate-duration: 3s;
+  }
+  .animate__animated.animate__fadeIn {
+    --animate-duration: 6s;
+  }
+.animate__animated .animate__fadeInLeftBig{
+    --animate-duration: 4s;
+}
+.animate__animated .animate__fadeInRightBig{
+    --animate-duration: 4s;
+}
+
+
+
 @font-face {
     font-family: "Manrope";
     src: url(../fonts/manrope-regular.ttf);
@@ -15,13 +30,165 @@
 	50% { background-position: 100% 50%; }
 	100% { background-position: 0px 50%; }
 }
+
+/* ------- STYLE IN GAMBYRGER MENU ------- */
+
+
+#menuToggle
+{
+  display: block;
+  position: absolute;
+  top: 65px;
+  right: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #ffffff;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ffffff;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 0;
+  padding: 50px 0 50px 50px;
+  padding-top: 125px;
+  right: -100px;
+  
+  background: #040404;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's fade it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  #menu {
+    transform: none;
+    opacity: 0;
+
+    transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+}
+
+  
+.nav_gamb{
+    display: none;
+}
+html { overflow-x: hidden; }
 body{
     background-color: #040404;
+    overflow-x: hidden;
 }
 header{
     display: flex;
     justify-content: center;
     height: 630px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .header_content{
     max-width: 1200px;
@@ -175,6 +342,7 @@ width: 100%;
     font-size: 24px;
     line-height: 33px;
     color: #FFFFFF;
+    padding-left: 30px;
 }
 .block_content {
     display: flex;
@@ -184,6 +352,11 @@ width: 100%;
     height: 600px;
     padding: 277px 0 277px;
 }
+.block_content .content{
+    display: flex;
+    justify-content: space-between;
+}
+
 .product {
     display: flex;
     flex-direction: column;
@@ -197,12 +370,15 @@ width: 100%;
     padding-top: 200px;
 }
 .images {
+    display: flex;
+    justify-content: center;
     max-width: 950px;
     width: 100%;
+    overflow: hidden;
 
 }
 .images img{
-    max-width: 950px;
+    width: 1600px;
     height: 700px;
 
 }
@@ -340,11 +516,296 @@ footer{
 }
 .contacts a:hover:after,
 .contacts a:focus:after {
-width: 100%;
+    width: 100%;
 }
 .contacts{
     display: flex;
     justify-content: space-between;
     max-width: 590px;
     width: 100%;
+}
+.about_images{
+    display: none;
+}
+
+@media (max-width: 1320px){
+    .slider{
+        display: flex;
+        justify-content: center;
+        max-width: 1320px;
+        width: 100%;
+    }
+    .slider img{
+        width: 1600px;
+        height: 700px;
+    }
+    .block_content p{
+        align-self: auto;
+        max-width: 750px;
+        width: 100%;
+        padding-left: 0;
+    }
+    .block_content .content {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .product_content {
+        position: relative;
+        height: 700px;
+        margin-bottom: 400px;
+        padding-top: 0;
+    }
+    .about_images{
+        display: block;
+    }
+    .images {
+        position: absolute;
+        max-width: 1300px;
+        width: 100%;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+    }
+    .images img{
+        width: 1600px;
+        height: 700px;
+        right: 200px;
+    
+    }
+    .discription {
+        position: absolute;
+        z-index: 100;
+        bottom: 20%;
+        left: 60%;
+    }
+    .discription p{
+        margin: 30px 0 30px 0;
+    }
+    .product_content:nth-child(2) .discription{
+        right: 60%;
+        left: 0;
+    }
+}
+@media (max-width: 1170px){
+    .block_content {
+        justify-content: center;
+    }
+    .product_content {
+        position: relative;
+        height: 700px;
+        margin-bottom: 400px;
+        padding-top: 0;
+    }
+    .about_images{
+        display: none;
+    }
+    .images {
+        justify-content: flex-end;
+    }
+    .product_content:nth-child(2) .images{
+        justify-content: flex-start;
+    }
+    .discription {
+        left: 40%;
+    }
+    .discription p{
+        margin: 30px 0 30px 0;
+    }
+    .product_content:nth-child(2) .discription{
+        right: 40%;
+        left: 0;
+    }
+}
+@media (max-width: 930px){
+    .nav_str{
+        display: none;
+    }
+    .nav_gamb{
+        display: block;
+    }
+    #menu{
+        display: none;
+    }
+    .navbar ul {
+        display: block; 
+        height: auto;
+    }
+    .product_content {
+        position: static;
+        margin-bottom: 400px;
+        padding-top: 0;
+        flex-direction: column;
+        max-height: 1177px;
+        height: 100%;
+    }
+    .product_content:nth-child(2) .images {
+         order: 1; 
+    }
+    .images {
+        position: static;
+        max-width: 1300px;
+        width: 100%;
+        overflow: hidden;
+        justify-content: center;
+    }
+    .images img{
+        width: 1600px;
+        height: 700px;
+        right: 200px;
+    
+    }
+    .discription {
+        position: static;
+        flex-direction: column;
+        justify-content: space-evenly;
+        max-width: 800px;
+        margin-left: 60px;
+        margin-top: 30px; 
+            
+            
+    }
+    .product_content:nth-child(2) .images {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 765px){
+    .slider{
+        display: flex;
+        justify-content: center;
+        max-width: 765px;
+        width: 100%;
+    }
+    .slider img{
+        width: 1500px;
+        height: 600px;
+    }
+    .content_description{
+        flex-direction: column-reverse;
+        align-items: center;
+
+    }
+    .description_text p{
+        font-size: 16px;
+        line-height: 120%;  
+    }
+    .description_text {
+        text-align: center;
+    }
+    .nav_scroll a{
+        flex-direction: column-reverse;
+    }
+    .nav_scroll p{
+        font-size: 13px;
+        line-height: 17px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-left: 0px;
+    }
+    .litering_content h1{
+        font-size: 65px;
+        line-height: 95%;
+    }
+    .block_content {
+        max-width: 450px;
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .content{
+        max-width: 480px;
+        width: 100%;
+    }
+    .content h2{
+        font-size: 36px;
+        line-height: 110%;  
+    }
+    .content p{
+        font-size: 16px;
+        line-height: 120%;
+    }
+    .images img{
+        height: 480px;
+    }
+    
+    .product_content:nth-child(1) h2 {
+        font-size: 36px;
+        line-height: 67px;
+    }
+    .product_content:nth-child(2) h2 {
+        font-size: 36px;
+        line-height: 67px;
+    }
+    .product_content:nth-child(3) h2 {
+        font-size: 36px;
+        line-height: 67px;
+    }
+    .discription p{
+        font-size: 16px;
+        line-height: 120%;
+    }
+    .discription p:nth-child(3){
+        font-size: 20px;
+        line-height: 27px;
+    }
+    .discription button{
+        max-width: 450px;
+        width: 100%;
+    }
+    .contacts {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px){
+    .slider{
+        display: flex;
+        justify-content: center;
+        max-width: 765px;
+        width: 100%;
+    }
+    .slider img{
+        width: 1200px;
+        height: 400px;
+    }
+    .description_text p{
+        font-size: 16px;
+        line-height: 120%;  
+    }
+    .nav_scroll p{
+        font-size: 13px;
+        line-height: 17px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-left: 0px;
+    }
+    .litering_content h1{
+        font-size: 50px;
+        line-height: 95%;
+    }
+    .block_content {
+        max-width: 390px;
+    }
+    .content{
+        max-width: 375px;
+        width: 100%;
+    }
+    .content h2{
+        font-size: 25px;
+        line-height: 110%;  
+    }
+    .content p{
+        font-size: 16px;
+        line-height: 120%;
+    }
+    .discription p{
+        font-size: 15px;
+        line-height: 120%;
+    }
+    .discription p:nth-child(3){
+        font-size: 18px;
+        line-height: 27px;
+    }
 }
