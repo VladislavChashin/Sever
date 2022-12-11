@@ -809,3 +809,10 @@ footer{
         line-height: 27px;
     }
 }
+@media (max-width: 400px) {
+    .litering_content h1{
+        font-size: 45px;
+        line-height: 95%;
+    }
+    
+}
