@@ -137,7 +137,7 @@
   margin: -100px 0 0 0;
   padding: 50px 0 50px 50px;
   padding-top: 125px;
-  right: -100px;
+  right: -1px;
   
   background: #040404;
   list-style-type: none;
@@ -148,12 +148,17 @@
   transform: translate(100%, 0);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  animation-delay: 2s;
 }
 
 #menu li
 {
   padding: 10px 0;
   font-size: 22px;
+}
+#menu li:before
+{
+  color: #52FFCC;
 }
 
 /*
@@ -760,6 +765,11 @@ footer{
 }
 
 @media (max-width: 480px){
+    #menu{
+        padding: 50px 0 50px 150px;
+        padding-top: 125px;
+        text-align: center
+    }
     .slider{
         display: flex;
         justify-content: center;
